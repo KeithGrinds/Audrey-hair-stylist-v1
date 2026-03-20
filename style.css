@@ -1,0 +1,70 @@
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Montserrat',sans-serif;background:#111;color:#fff;overflow-x:hidden}
+
+/* CURSOR */
+.cursor{
+position:fixed;width:20px;height:20px;border-radius:50%;
+background:#ff69b4;pointer-events:none;transform:translate(-50%,-50%);
+transition:0.1s;z-index:9999;
+}
+.cursor.active{transform:scale(2);}
+
+/* HEADER */
+header{
+display:flex;justify-content:space-between;align-items:center;
+padding:20px;background:#000;
+}
+.logo{font-family:'Pacifico';color:#ff69b4;font-size:1.5rem;}
+.nav-links{display:flex;gap:20px;list-style:none;}
+.nav-links a{color:#fff;text-decoration:none;position:relative;}
+.nav-links a::after{
+content:'';position:absolute;width:0;height:2px;background:#ff69b4;bottom:-5px;left:0;transition:0.3s;
+}
+.nav-links a:hover::after{width:100%;}
+
+/* HERO */
+.hero{height:100vh;display:flex;align-items:center;justify-content:center;position:relative;text-align:center;}
+canvas{position:absolute;width:100%;height:100%;}
+.hero-content{z-index:2;}
+.hero h1{font-size:3rem;text-shadow:0 0 20px #ff69b4;}
+.btn-glow{
+padding:15px 30px;background:#ff69b4;border-radius:50px;
+box-shadow:0 0 20px #ff69b4;transition:0.3s;display:inline-block;margin-top:20px;
+}
+.btn-glow:hover{transform:scale(1.1);}
+
+/* GRID */
+.services-grid,.portfolio-grid{
+display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;padding:50px;
+}
+
+/* CARDS */
+.service-card,.portfolio-item{
+background:#1a1a1a;padding:30px;border-radius:20px;
+transition:0.3s;transform-style:preserve-3d;
+}
+.service-card:hover{box-shadow:0 0 30px #ff69b4;}
+
+/* PORTFOLIO */
+.portfolio-item img{width:100%;border-radius:20px;transition:0.3s;}
+.portfolio-item:hover img{transform:scale(1.1);}
+
+/* SOCIAL */
+.social-icons{display:flex;gap:20px;justify-content:center;margin-top:20px;}
+.social{
+width:60px;height:60px;border-radius:50%;
+background:#222;display:flex;align-items:center;justify-content:center;
+transition:0.4s;
+}
+.social svg{width:24px;fill:#fff;}
+.social:hover{transform:scale(1.2);box-shadow:0 0 30px #ff69b4;}
+
+/* FORM */
+form{display:flex;flex-direction:column;gap:15px;max-width:400px;margin:auto;}
+input,textarea{padding:10px;border-radius:10px;border:none;}
+textarea{height:100px}
+
+/* FADE */
+.fade-in{opacity:0;transform:translateY(20px);transition:0.8s;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
